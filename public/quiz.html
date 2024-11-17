@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <title>quiz</title>
+    <script src="assets/js/quiz.js"></script>
+</head>
+
+<body>
+    <header class="flex-space">
+        <h1>under construction</h1>
+
+        <div id="div_usuario">
+            <span id="span_nome_usuario">usuário</span>
+            <div id="div_foto_perfil"></div>
+        </div>
+    </header>
+
+    <main class="flex-center">
+        <article id="article_instrucoes" class="janela" style="display: none;">
+
+            <div class="topo-janela flex-space">
+                <h2>Instruções do jogo</h2>
+                <button class="fechar-janela" onclick="comecarJogo()">
+                    X
+                </button>
+            </div>
+
+            <div class="conteudo-janela">
+                <div>
+                    <h2>Instruções do jogo</h2>
+                    <p>Hmm</p>
+                </div>
+                <button class="acao" id="bt_start" onclick="comecarJogo()">
+                    Começar o Jogo
+                </button>
+            </div>
+
+        </article>
+
+        <article id="article_game" class="janela">
+
+            <div class="topo-janela">
+                <strong id="strong_numero_pergunta">1.</strong> 
+                <span id="span_pergunta">Quem foi geografia?</span>
+                <!-- <button class="fechar-janela" onclick="terminarJogo()">
+                    X
+                </button> -->
+            </div>
+
+            <div class="conteudo-janela">
+                <button id="btn_alternativa0" class="alternativa flex-space" onclick="verificarResposta('0')" name="correta">
+                    <span class="marcador-alternativa">a.</span> 
+                    <span id="span_texto_alternativa_a">professor</span>
+                    <img id="img_alternativa0" class="marcador-alternativa">
+                </button>
+
+                <button id="btn_alternativa1" class="alternativa flex-space" onclick="verificarResposta('1')" name="incorreta">
+                    <span class="marcador-alternativa">b.</span> 
+                    <span id="span_texto_alternativa_b">professor</span>
+                    <img id="img_alternativa1" class="marcador-alternativa">
+                </button>
+
+                <button id="btn_alternativa2" class="alternativa flex-space" onclick="verificarResposta('2')">
+                    <span class="marcador-alternativa">c.</span> 
+                    <span id="span_texto_alternativa_c">professor</span>
+                    <img id="img_alternativa2" class="marcador-alternativa">
+                </button>
+            </div>
+
+        </article>
+
+        <article id="article_gameover" class="janela" style="display: none;">
+            <div class="topo-janela flex-space">
+                <h2>Fim de jogo</h2>
+
+                <button class="fechar-janela" onclick="recomecarJogo()">
+                    X
+                </button>
+            </div>
+
+            <div class="conteudo-janela">
+                <div>
+                    <h2>Você terminou o jogo!</h2>
+                    <p id="p_pontuacao" style="display: none;">
+                        Essas foram as palavras que acertou:
+                    <ol id="ol_pontuacao">
+                        </ul>
+                        </p>
+                </div>
+
+                <button class="acao" onclick="recomecarJogo()">
+                    Recomeçar o jogo
+                </button>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>
