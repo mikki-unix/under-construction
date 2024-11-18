@@ -147,7 +147,9 @@ main {
 
 
 .topo-janela {
+    position: relative;
     box-sizing: border-box;
+    
     width: 100%;
     height: fit-content;
 
@@ -161,7 +163,11 @@ main {
     background-color: var(--bg-topo-janela);
 }
 
-/* button.fechar-janela {
+button.fechar-janela {
+    position: absolute;
+    top: 12%;
+    right: 2%;
+
     width: 2rem;
     height: 2rem;
 
@@ -170,7 +176,7 @@ main {
     font-size: 1.4rem;
 
     background-color: transparent;
-} */
+}
 
 .conteudo-janela {
     padding: 3.5rem 2rem;
@@ -192,6 +198,7 @@ button.alternativa {
 
     text-align: center;
     font-size: 1.9rem;
+    background-color: transparent;
 }
 
 

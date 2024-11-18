@@ -20,21 +20,16 @@
     </header>
 
     <main class="flex-center">
-        <article id="article_instrucoes" class="janela" style="display: none;">
+        <article id="article_instrucoes" class="janela">
 
-            <div class="topo-janela flex-space">
-                <h2>Instruções do jogo</h2>
-                <button class="fechar-janela" onclick="comecarJogo()">
-                    X
-                </button>
+            <div class="topo-janela">
+                <h2>Quiz!</h2>
             </div>
 
             <div class="conteudo-janela">
-                <div>
-                    <h2>Instruções do jogo</h2>
-                    <p>Hmm</p>
-                </div>
-                <button class="acao" id="bt_start" onclick="comecarJogo()">
+                <p>Vamos testar seus conhecimentos!</p>
+
+                <button class="acao" id="bt_start" onclick="comecarQuiz()">
                     Começar o Jogo
                 </button>
             </div>
@@ -45,28 +40,28 @@
 
             <div class="topo-janela">
                 <strong id="strong_numero_pergunta">1.</strong> 
-                <span id="span_pergunta">Quem foi geografia?</span>
-                <!-- <button class="fechar-janela" onclick="terminarJogo()">
+                <span id="span_enunciado">Quem foi geografia?</span>
+                <button class="fechar-janela">
                     X
-                </button> -->
+                </button>
             </div>
 
             <div class="conteudo-janela">
-                <button id="btn_alternativa0" class="alternativa flex-space" onclick="verificarResposta('0')" name="correta">
+                <button id="btn_alternativa0" class="alternativa flex-space" onclick="verificarResposta('0')">
                     <span class="marcador-alternativa">a.</span> 
-                    <span id="span_texto_alternativa_a">professor</span>
+                    <span id="span_texto_alternativa0">professor</span>
                     <img id="img_alternativa0" class="marcador-alternativa">
                 </button>
 
-                <button id="btn_alternativa1" class="alternativa flex-space" onclick="verificarResposta('1')" name="incorreta">
+                <button id="btn_alternativa1" class="alternativa flex-space" onclick="verificarResposta('1')">
                     <span class="marcador-alternativa">b.</span> 
-                    <span id="span_texto_alternativa_b">professor</span>
+                    <span id="span_texto_alternativa1">professor</span>
                     <img id="img_alternativa1" class="marcador-alternativa">
                 </button>
 
                 <button id="btn_alternativa2" class="alternativa flex-space" onclick="verificarResposta('2')">
                     <span class="marcador-alternativa">c.</span> 
-                    <span id="span_texto_alternativa_c">professor</span>
+                    <span id="span_texto_alternativa2">professor</span>
                     <img id="img_alternativa2" class="marcador-alternativa">
                 </button>
             </div>
