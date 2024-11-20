@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --fonte: 'Work Sans';
+    --borda-padrao: .19rem solid black;
+
+    --light-pink: #fec6ec;
+    --pink: #fda9e1;
+    --bold-pink: #fa90d8;
+    --dark-pink: #f779ce;
+    
+    --bg-blue: #e9f0ff;
+    --light-blue: #cbdbfe;
+    --blue: #b1c8fc; 
+}
+
+@media (min-width: 0px) {   
+    html {
+        font-size: 43%;
+    }
+
+}
+
+@media (min-width: 375px) {
+    html {
+        font-size: 50%;
+    }   
+}
+
+@media (min-width: 446px) {
+    html {
+        font-size: 62.5%;
+    }   
+}
+
+@media (max-height: 700px) {
+    body {
+        padding: 2rem 0;
+    }
+}
+
+@media (min-height: 701px) {
+    body {
+        padding: 0;
+    }
+}
+
+h1, h2, h3, strong {
+    margin: 0;
+    font-family: var(--fonte);
+    font-weight: 600;
+}
+
+button {
+    border: var(--borda-padrao);
+    font-family: var(--fonte);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+
+    font-family: var(--fonte);
+    background-color: var(--bg-blue);
+}
+
+.viewport {
+    width: 100vw;
+    height: 100vh;
+    min-height: fit-content;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: fixed;
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 2rem;
+
+    background-color: white;
+    border-bottom: var(--borda-padrao);
+}
+
+#titulo-site {
+    font-weight: 900;
+    color: var(--dark-pink);
+}
+
+header #titulo-site {
+    font-size: 3.2rem;
+}
+
+#div_usuario {
+    width: fit-content;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+header #span_nome_usuario {
+    font-size: 2.2rem;
+    font-weight: 450;
+}
+
+header #div_foto_perfil {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    outline: var(--borda-padrao);
+    width: 4.3rem;
+}
+
+button.acao {
+    padding: .7rem;
+    border-radius: 1.5rem;
+
+    font-size: 1.7rem;
+    font-weight: 500;
+    background-color: var(--bold-pink);
+}

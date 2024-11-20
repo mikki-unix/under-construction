@@ -1,0 +1,21 @@
+@import url('main.css');
+
+#formulario {
+    width: 35rem;
+    height: fit-content;
+
+    padding: 3rem;
+
+    border: var(--borda-padrao);
+    border-radius: 3rem;
+
+    gap: 2rem;
+
+    font-size: 2rem;
+    text-align: center;
+    background-color: white;
+}
+
+form {
+    gap: .7rem;
+}

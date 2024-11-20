@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/quiz.css">
     <title>quiz</title>
     <script src="assets/js/quiz.js"></script>
 </head>
 
 <body>
     <header class="flex-space">
-        <h1>under construction</h1>
+        <h1 id="titulo-site">under construction</h1>
 
         <div id="div_usuario">
             <span id="span_nome_usuario">usuário</span>
@@ -19,17 +19,17 @@
         </div>
     </header>
 
-    <main class="flex-center">
+    <main class="viewport flex-center">
         <article id="article_instrucoes" class="janela">
 
             <div class="topo-janela">
                 <h2>Quiz!</h2>
             </div>
 
-            <div class="conteudo-janela">
+            <div class="conteudo-janela flex-column">
                 <p>Vamos testar seus conhecimentos!</p>
 
-                <button class="acao" id="bt_start" onclick="comecarQuiz()">
+                <button class="acao" onclick="comecarQuiz()">
                     Começar o Jogo
                 </button>
             </div>
@@ -46,7 +46,7 @@
                 </button>
             </div>
 
-            <div class="conteudo-janela">
+            <div class="conteudo-janela flex-column">
                 <button id="btn_alternativa0" class="alternativa flex-space" onclick="verificarResposta('0')">
                     <span class="marcador-alternativa">a.</span> 
                     <span id="span_texto_alternativa0">professor</span>
