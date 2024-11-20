@@ -10,8 +10,12 @@ const perguntas = [
 ]
 
 function comecarQuiz() {
+    article_instrucoes.style.display = 'none'
+    
     criarCheckListPerguntas()
     sortearPergunta()
+    
+    article_game.style.display = 'block'
 }
 
 const checkListPerguntas = []
@@ -24,7 +28,7 @@ function criarCheckListPerguntas() {
 var numeroPergunta = 0
 function sortearPergunta() {
     if (checkListPerguntas.length == 0) {
-        return alert('cabo')
+        return terminarQuiz()
     }
 
     const posicaoPergunta = parseInt(Math.random() * checkListPerguntas.length)
@@ -95,4 +99,8 @@ function verificarResposta(numero = '') {
 
         sortearPergunta()
     }, 2000)
+}
+
+function terminarQuiz() {
+   
 }

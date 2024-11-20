@@ -30,18 +30,18 @@
                 <p>Vamos testar seus conhecimentos!</p>
 
                 <button class="acao" onclick="comecarQuiz()">
-                    Começar o Jogo
+                    jogar
                 </button>
             </div>
 
         </article>
 
-        <article id="article_game" class="janela">
+        <article id="article_quiz" class="janela" style="display: none;">
 
             <div class="topo-janela">
                 <strong id="strong_numero_pergunta">1.</strong> 
                 <span id="span_enunciado">Quem foi geografia?</span>
-                <button class="fechar-janela">
+                <button class="fechar-janela" onclick="terminarQuiz()">
                     X
                 </button>
             </div>
@@ -68,29 +68,27 @@
 
         </article>
 
-        <article id="article_gameover" class="janela" style="display: none;">
-            <div class="topo-janela flex-space">
-                <h2>Fim de jogo</h2>
-
-                <button class="fechar-janela" onclick="recomecarJogo()">
-                    X
-                </button>
+        <article id="article_relatorio" class="janela" style="display: none;">
+            <div class="topo-janela">
+                <h2>fim de jogo</h2>
             </div>
 
-            <div class="conteudo-janela">
-                <div>
-                    <h2>Você terminou o jogo!</h2>
-                    <p id="p_pontuacao" style="display: none;">
-                        Essas foram as palavras que acertou:
-                    <ol id="ol_pontuacao">
-                        </ul>
-                        </p>
-                </div>
-
-                <button class="acao" onclick="recomecarJogo()">
-                    Recomeçar o jogo
+            <div class="conteudo-janela flex-column">
+              <p>
+                você acertou <span id="span_n_acertos">0</span> de <span id="span_n_questoes">0</span> questões
+              </p>
+              
+              <div class="flex-column">
+                <button id="novamente" class="alternativa" onclick="recomecarQuiz()">
+                  jogar novamente
                 </button>
+                
+                <button id="painel" class="alternativa">
+                  ir pro painel
+                </button>
+              </div>
             </div>
+            
         </article>
     </main>
 </body>
