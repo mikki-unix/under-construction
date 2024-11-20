@@ -9,23 +9,32 @@ const perguntas = [
     }
 ]
 
+
+var qtdAcertos = 0;
+
 function comecarQuiz() {
-    article_instrucoes.style.display = 'none'
+    qtdAcertos = 0
+
+    article_instrucoes.style.display == '' ? article_instrucoes.style.display = 'none' : article_relatorio.style.display = 'none' 
     
     criarCheckListPerguntas()
     sortearPergunta()
     
-    article_game.style.display = 'block'
+    article_quiz.style.display = ''
 }
 
 const checkListPerguntas = []
 function criarCheckListPerguntas() {
-    for (var numero = 0; numero < perguntas.length; numero++) {
-        checkListPerguntas.push(numero)
+    for (
+        var numeroPergunta = 0; 
+        numeroPergunta < perguntas.length;
+        numeroPergunta++
+    ) {
+        checkListPerguntas.push(numeroPergunta)
     }
 }
 
-var numeroPergunta = 0
+var qtdQuestoes = 0
 function sortearPergunta() {
     if (checkListPerguntas.length == 0) {
         return terminarQuiz()
@@ -38,8 +47,9 @@ function sortearPergunta() {
     checkListPerguntas.splice(posicaoPergunta, 1)
 
     span_enunciado.innerText = enunciadoPergunta
-    numeroPergunta++
-    strong_numero_pergunta.innerText = numeroPergunta + '.'
+
+    qtdQuestoes++
+    strong_numero_pergunta.innerText = qtdQuestoes + '.'
 
     sortearAlternativas(posicaoPergunta)
 }
@@ -73,8 +83,6 @@ function sortearAlternativas(posicaoPergunta) {
     }
 }
 
-var qtdAcertos = 0;
-var qtdErros = 0;
 function verificarResposta(numero = '') {
     const alternativa = document.getElementById(`btn_alternativa${numero}`)
 
@@ -89,8 +97,6 @@ function verificarResposta(numero = '') {
     } else {
         alternativa.classList.toggle(nameAlternativa)
         imgAlternativa.setAttribute('src', 'assets/icons/cross.svg')
-
-        qtdErros++
     }
 
     setTimeout(function () {
@@ -102,5 +108,10 @@ function verificarResposta(numero = '') {
 }
 
 function terminarQuiz() {
-   
+   article_quiz.style.display = 'none'
+
+    span_n_acertos.innerText = qtdAcertos
+    span_n_questoes.innerText = qtdQuestoes
+
+   article_relatorio.style.display = ''
 }

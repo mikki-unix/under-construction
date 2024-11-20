@@ -26,7 +26,7 @@
                 <h2>Quiz!</h2>
             </div>
 
-            <div class="conteudo-janela flex-column">
+            <div class="conteudo-janela">
                 <p>Vamos testar seus conhecimentos!</p>
 
                 <button class="acao" onclick="comecarQuiz()">
@@ -39,7 +39,7 @@
         <article id="article_quiz" class="janela" style="display: none;">
 
             <div class="topo-janela">
-                <strong id="strong_numero_pergunta">1.</strong> 
+                <strong id="strong_numero_pergunta">1.</strong>
                 <span id="span_enunciado">Quem foi geografia?</span>
                 <button class="fechar-janela" onclick="terminarQuiz()">
                     X
@@ -48,19 +48,19 @@
 
             <div class="conteudo-janela flex-column">
                 <button id="btn_alternativa0" class="alternativa flex-space" onclick="verificarResposta('0')">
-                    <span class="marcador-alternativa">a.</span> 
+                    <span class="marcador-alternativa">a.</span>
                     <span id="span_texto_alternativa0">professor</span>
                     <img id="img_alternativa0" class="marcador-alternativa">
                 </button>
 
                 <button id="btn_alternativa1" class="alternativa flex-space" onclick="verificarResposta('1')">
-                    <span class="marcador-alternativa">b.</span> 
+                    <span class="marcador-alternativa">b.</span>
                     <span id="span_texto_alternativa1">professor</span>
                     <img id="img_alternativa1" class="marcador-alternativa">
                 </button>
 
                 <button id="btn_alternativa2" class="alternativa flex-space" onclick="verificarResposta('2')">
-                    <span class="marcador-alternativa">c.</span> 
+                    <span class="marcador-alternativa">c.</span>
                     <span id="span_texto_alternativa2">professor</span>
                     <img id="img_alternativa2" class="marcador-alternativa">
                 </button>
@@ -70,25 +70,26 @@
 
         <article id="article_relatorio" class="janela" style="display: none;">
             <div class="topo-janela">
-                <h2>fim de jogo</h2>
+                <h2>Fim de jogo</h2>
             </div>
 
-            <div class="conteudo-janela flex-column">
-              <p>
-                você acertou <span id="span_n_acertos">0</span> de <span id="span_n_questoes">0</span> questões
-              </p>
-              
-              <div class="flex-column">
-                <button id="novamente" class="alternativa" onclick="recomecarQuiz()">
-                  jogar novamente
-                </button>
-                
-                <button id="painel" class="alternativa">
-                  ir pro painel
-                </button>
-              </div>
+            <div class="conteudo-janela">
+                <p>
+                    Você acertou <span id="span_n_acertos">0</span> de <span id="span_n_questoes">0</span> questões.
+                </p>
+
+                <div class="flex-column">
+                    <button id="novamente" class="alternativa" onclick="comecarQuiz()">
+                        jogar de novo
+                    </button>
+
+                    <button id="painel" class="alternativa">
+                        ir pro painel
+                    </button>
+                </div>
+
             </div>
-            
+
         </article>
     </main>
 </body>
