@@ -18,11 +18,35 @@ fkUsuario int,
 	constraint pkComposta
 		primary key (idQuiz, fkUsuario),
 qtdAcertos int,
-qtdQuestoes int,
-dtPartida date
+dtPartida datetime default current_timestamp
 );
 -- fim tabelas
+
+-- selects
+select * from usuario;
+select * from quiz;
+
+select 
+	idQuiz,
+	qtdAcertos,
+    dtPartida
+		from quiz
+		join usuario on idUsuario = fkUsuario
+			where fkUsuario = 1;
+            
+select
+	count(idQuiz) as realizados,
+	sum(qtdAcertos) as pontuacao,
+    count(qtdAcertos = 10) as perfeitos
+		from quiz
+        join usuario on idUsuario = fkUsuario
+			where fkUsuario = 1
+            order by fkUsuario;
+-- fim selects
 
 -- inserções para testes
 insert into usuario value
 	(default, 'Mikki', 'mikki@email.com', 'Senha!1');
+    
+insert into quiz(idQuiz, fkUsuario, qtdAcertos) value
+	(1, 1, 2);
