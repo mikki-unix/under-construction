@@ -43,7 +43,22 @@ function obterPontuacaoUsuario(idUsuario) {
                 from quiz
                 join usuario on idUsuario = fkUsuario
                     where fkUsuario = 1
-                    order by fkUsuario;
+                    group by fkUsuario;
+    `
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function obterPontuacoesGerais() {
+    const instrucaoSql = `
+        select
+            nome as usuarie,
+            sum(qtdAcertos) as pontuacao
+                from quiz
+                join usuario on idUsuario = fkUsuario
+                    group by fkUsuario
+                    order by pontuacao;
     `
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -54,5 +69,6 @@ module.exports = {
     contarRealizados,
     registrar,
     obterHistoricoUsuario,
-    obterPontuacaoUsuario
+    obterPontuacaoUsuario,
+    obterPontuacoesGerais
 };

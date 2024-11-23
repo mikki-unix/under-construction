@@ -41,7 +41,15 @@ select
 		from quiz
         join usuario on idUsuario = fkUsuario
 			where fkUsuario = 1
-            order by fkUsuario;
+            group by fkUsuario;
+            
+select
+	nome as usuarie,
+	sum(qtdAcertos) as pontuacao
+		from quiz
+        join usuario on idUsuario = fkUsuario
+            group by fkUsuario
+            order by pontuacao;
 -- fim selects
 
 -- inserções para testes

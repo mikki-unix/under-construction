@@ -107,12 +107,5 @@ function gerarKpis(dados) {
     const perfeitos = dados[0].perfeitos
 
     const listaKpis = [realizados, pontuacao, perfeitos]
-    for (
-        var numeroKpi = 0;
-        numeroKpi <= 2;
-        numeroKpi++
-    ) {
-        const strongKpi = document.getElementById(`strong_kpi${numeroKpi}`)
-        strongKpi.innerText = listaKpis[numeroKpi]
-    }
+    exibirMultiplosItensElementos(listaKpis, 'strong_kpi')
 }
