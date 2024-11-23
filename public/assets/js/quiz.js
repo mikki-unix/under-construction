@@ -9,24 +9,23 @@ const perguntas = [
     }
 ]
 
-
 var qtdAcertos = 0;
 
 function comecarQuiz() {
     qtdAcertos = 0
 
-    article_instrucoes.style.display == '' ? article_instrucoes.style.display = 'none' : article_relatorio.style.display = 'none' 
-    
+    article_instrucoes.style.display == '' ? article_instrucoes.style.display = 'none' : article_relatorio.style.display = 'none'
+
     criarCheckListPerguntas()
     sortearPergunta()
-    
+
     article_quiz.style.display = ''
 }
 
 const checkListPerguntas = []
 function criarCheckListPerguntas() {
     for (
-        var numeroPergunta = 0; 
+        var numeroPergunta = 0;
         numeroPergunta < perguntas.length;
         numeroPergunta++
     ) {
@@ -61,18 +60,18 @@ function sortearAlternativas(posicaoPergunta) {
     for (
         var numeroAlternativa = 0;
         numeroAlternativa <= 2;
-        numeroAlternativa++ 
+        numeroAlternativa++
     ) {
         const numeroAleatorioSpan = parseInt(Math.random() * checkListSpan.length)
-        
+
         const spanSelecionado = document.getElementById(`span_texto_alternativa${checkListSpan[numeroAleatorioSpan]}`)
         const btnSelecionado = document.getElementById(`btn_alternativa${checkListSpan[numeroAleatorioSpan]}`)
-        
+
         checkListSpan.splice(numeroAleatorioSpan, 1)
 
         const numeroAleatorioTexto = parseInt(Math.random() * checklistTextoAlternativa.length)
         spanSelecionado.innerText = perguntas[posicaoPergunta].alternativas[checklistTextoAlternativa[numeroAleatorioTexto]]
-        
+
         if (checklistTextoAlternativa[numeroAleatorioTexto] == 0) {
             btnSelecionado.setAttribute('name', 'correta')
         } else {
@@ -108,10 +107,32 @@ function verificarResposta(numero = '') {
 }
 
 function terminarQuiz() {
-   article_quiz.style.display = 'none'
+    article_quiz.style.display = 'none'
 
     span_n_acertos.innerText = qtdAcertos
     span_n_questoes.innerText = qtdQuestoes
 
-   article_relatorio.style.display = ''
+    article_relatorio.style.display = ''
+
+    registrar()
+}
+
+function registrar() {
+
+    fetch("/quiz/registrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            idServer: sessionStorage.ID_USUARIO,
+            acertosServer: qtdAcertos
+        }),
+    })
+        .then(function (resposta) {
+            console.log("resposta do registro: ", resposta);
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
 }

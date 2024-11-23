@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de como Plotar Gráficos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/dash.js"></script>
+    <style>
+        main div {
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body onload="obterDados()">
+    <main>
+        <section>
+            <div class="kpi">
+                <p>Quizzes realizados</p>
+                <strong id="strong_kpi0">0</strong>
+            </div>
+            <div class="kpi">
+                <p>Pontuação acumulada</p>
+                <strong id="strong_kpi1">0</strong>
+            </div>
+            <div class="kpi">
+                <p>Quizzes perfeitos</p>
+                <strong id="strong_kpi2">0</strong>
+            </div>
+        </section>
+
+        <div>
+            <canvas id="linha"></canvas>
+        </div>
+
+        <div>
+            <canvas id="barra"></canvas>
+        </div>
+    </main>
+</body>
+
+</html>

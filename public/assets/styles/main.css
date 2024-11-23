@@ -117,7 +117,6 @@ header #titulo-site {
 #div_usuario {
     width: fit-content;
 
-    display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 1.5rem;

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>cadastro</title>
+  <script src="assets/js/cadastro.js"></script>
+  <script src="assets/js/erroslogin.js"></script>
 </head>
 <body>
   <main class="janela flex-column">
@@ -12,9 +14,10 @@
     <h2>cadastro</h2>
     
     <form class="flex-column">
-      <input id="inp_usuario" placeholder="usuario">
-      <input id="inp_senha" placeholder="senha">
-      <input id="inp_confirmar_senha" placeholder="confirmar senha">
+      <input id="input_usuario" placeholder="usuario">
+      <input id="input_email" placeholder="usuario@email">
+      <input id="input_senha" placeholder="***">
+      <input id="input_confirmar_senha" placeholder="***">
     </form>
     
     <div id="div_erro" style="display: none"></div>
@@ -22,7 +25,7 @@
     <button class="acao" onclick="cadastrarUsuario()">
       cadastrar
     </button>
-    <p>não tem login? cadastre-se</p>
+    <p>já tem conta? faça login</p>
   </main>
 </body>
 </html>
