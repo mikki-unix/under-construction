@@ -2,7 +2,7 @@ function logarUsuario() {
     const usuario = input_usuario.value;
     const senha = input_senha.value;
 
-    const elemento = document.getElementById('div_erro')
+    const elemento = document.getElementById('span_erro')
 
     if (algumErro([usuario, senha], elemento, 'login')) {
         return

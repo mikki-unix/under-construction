@@ -3,35 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <style>
-        main {
-            padding-top: 10rem;
-            font-size: 1.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/styles/landing.css">
     <title>underconstruction</title>
     <script src="assets/js/sessao.js"></script>
+    <script src="assets/js/erroslogin.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/exibicao.js"></script>
 </head>
 <body onload="validarSessao()">
     <header class="flex-space">
         <h1 id="titulo-site">under construction</h1>
 
-        <div id="div_usuario" style="display: none;">
+        <div id="div_sessao" class="flex-end">
+            <button id="cadastro" class="acao" onclick="window.location = 'cadastro.html'">
+                cadastro
+            </button>
+            <button id="login" class="acao login" onclick="abrirFecharMenu('login')">
+                login
+            </button>
+        </div>
+
+        <div id="div_usuario" class="flex-end" style="display: none;">
             <span id="span_nome_usuario">usuário</span>
             <div id="div_foto_perfil"></div>
         </div>
-
     </header>
+
+    <aside id="aside_menu_login" class="menu flex-column" style="display: none;">
+        <form class="flex-column">
+            <span class="campo flex-space">
+                <img src="assets/icons/badge.svg">
+                <input id="input_usuario" placeholder="usuarie">
+            </span>
+            <span class="campo flex-space">
+                <img src="assets/icons/password.svg">
+                <input id="input_senha" type="password" placeholder="••••••">
+            </span>
+        </form>
+        
+        <span id="span_erro" style="display: none;">deu xabu</span>
+
+        <button class="acao login" onclick="logarUsuario()">
+            logar
+        </button>
+    </aside>
+
+    <aside id="aside_menu_usuario" class="menu" style="display: none;">
+
+    </aside>
 
     <main>
         <h1>index para tempos de desenvolvimento</h1>
-        <ul>
-            <li><a href="login.html">login</a></li>
-            <li><a href="cadastro.html">cadastro</a></li>
-            <li><a href="quiz.html">quiz</a></li>
-            <li><a href="dashboard/index.html">daaaash</a></li>
-        </ul>
     </main>
 </body>
 </html>

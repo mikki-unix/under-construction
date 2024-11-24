@@ -1,3 +1,9 @@
+function abrirFecharMenu(nomeMenu = '') {
+    const elemento = document.getElementById(`aside_menu_${nomeMenu}`) 
+
+    elemento.style.display = elemento.style.display == 'none' ? '' : 'none'
+}
+
 function exibirMultiplosItensElementos(lista = [], idElemento = '') {
     for (
         var posicao = 0;

@@ -1,10 +1,5 @@
 @import url('main.css');
 
-:root {
-    --bg-correta: #fda9e1;
-    --bg-incorreta: #b1c8fc;
-}
-
 .janela {
     width: 40rem;
 

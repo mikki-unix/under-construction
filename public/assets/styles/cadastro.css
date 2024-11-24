@@ -18,6 +18,10 @@ main header {
     border-radius: var(--radius) var(--radius) 0 0;
 }
 
+main header #titulo-site {
+    font-size: 2.7rem;
+}
+
 main header h2 {
     font-size: 2rem;
 }
@@ -45,25 +49,17 @@ input[type="file"] {
     display: none;
 }
 
-
 form section#campos {
     gap: .7rem;
 }
 
 .campo {
     width: 20rem;
-    
-    padding: .3rem;
-    border: var(--borda-padrao);
-    border-radius: .5rem;
-    
-    gap: .2rem;
 }
 
-.campo input {
-    width: 100%;
-
-    font-size: 1.49rem;
+#span_erro {
+    margin-top: 1.5rem;
+    margin-bottom: -1rem;
 }
 
 main button {
@@ -76,12 +72,4 @@ main p {
 
     font-size: 1.1rem;
     text-align: center;
-}
-
-#span_erro {
-    margin-top: 1.5rem;
-    margin-bottom: -1rem;
-
-    font-size: 1.45rem;
-    font-weight: 450;
 }
