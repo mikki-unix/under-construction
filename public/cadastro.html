@@ -16,29 +16,50 @@
     </header>
     
     <section class="flex-column">
+
       <form class="flex-space">
         <section class="flex-column">
           <label id="label_exibicao" for="input_upload"></label>
           <input type="file" id="input_upload" onchange="exibirImagem()">
-            <!--
-              `onchange` detecta quando é alterado o input, ou seja, quando recebe um arquivo.
-              é semelhante ao `onclick` num botão
-            -->
+          <!-- `onchange` detecta quando o input é alterado, ou seja, quando recebe um arquivo. é semelhante ao `onclick` num botão -->
         </section>
+
         <section id="campos" class="flex-column">
-          <input id="input_usuario" placeholder="usuario">
-          <input id="input_email" placeholder="usuario@email">
-          <input id="input_senha" placeholder="***">
-          <input id="input_confirmar_senha" placeholder="***">
+
+          <span class="campo flex-space">
+            <img src="assets/icons/badge.svg">
+            <input id="input_usuario" placeholder="usuarie">
+          </span>
+
+          <span class="campo flex-space">
+            <img src="assets/icons/email.svg" class="icon">
+            <input id="input_email" placeholder="usuarie@email">
+          </span>
+
+          <span class="campo flex-space">
+            <img src="assets/icons/password.svg" class="icon">
+            <input id="input_senha" type="password" placeholder="••••••">
+          </span>
+
+          <span class="campo flex-space">
+            <img src="assets/icons/password2.svg" class="icon">
+            <input id="input_confirmar_senha" type="password" placeholder="*****">
+          </span>
+
         </section>
       </form>
       
-      <div id="div_erro" style="display: none"></div>
+      <span id="span_erro" style="display: none">deu xabu</span>
       
       <button class="acao" onclick="cadastrarUsuario()">
         cadastrar
       </button>
-      <p>já tem conta? faça login</p>
+
+      <p>
+        já é cadastrade? <br> 
+        <a href="index.html">faça login</a>
+      </p>
+
     </section>
   </main>
 </body>

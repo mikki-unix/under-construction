@@ -12,7 +12,7 @@ function algumErro(campos = [], elemento, operacao = '') {
 
 function determinarErro(campos = [], operacao = 'cadastro') {
     if (algumCampoVazio(campos)) {
-        return '<p>preencha todos os campos</p>'
+        return 'preencha todos os campos'
 
     } else if (operacao == 'cadastro') {
         const usuario = campos[0]
@@ -20,9 +20,9 @@ function determinarErro(campos = [], operacao = 'cadastro') {
         const senhas = [campos[2], campos[3]]
 
         if (usuarioEhCurto(usuario)) {
-            return '<p>usuário muito curto</p>'
+            return 'usuário muito curto'
         } else if (emailEhInvalido(email)) {
-            return '<p>e-mail inválido</p>'
+            return 'e-mail inválido'
         } else if (algumaSenhaInvalida(senhas)) {
             return
         }
