@@ -1,10 +1,15 @@
 const express = require("express");
 const router = express.Router();
-
+const upload = require('../config/upload');
 const usuarioController = require("../controllers/usuarioController");
 
-//Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
-router.post("/cadastrar", function (req, res) {
+// upload.single('imagem') vai buscar no json alguma propriedade chamada imagem 
+router.post("/cadastrar", upload.single('imagem'), function (req, res) {
+    console.log(`\n
+        tamanho da requisição (em bytes):\n
+        ${req.headers['content-length']}    
+    `)
+
     usuarioController.cadastrar(req, res);
 })
 

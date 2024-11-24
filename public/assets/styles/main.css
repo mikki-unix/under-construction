@@ -132,6 +132,8 @@ header #div_foto_perfil {
     border-radius: 50%;
     outline: var(--borda-padrao);
     width: 4.3rem;
+
+    background-size: cover;
 }
 
 button.acao {

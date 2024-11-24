@@ -18,9 +18,6 @@ function logarUsuario() {
             senhaServer: senha
         })
     }).then(function (resposta) {
-        console.log(resposta)
-        console.log("ESTOU NO THEN DO entrar()!")
-
         if (resposta.ok) {
             console.log(resposta);
 
@@ -29,6 +26,7 @@ function logarUsuario() {
                 console.log(JSON.stringify(json));
                 sessionStorage.ID_USUARIO = json.id;
                 sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.IMAGEM_USUARIO = json.imagem
             });
 
         } else {

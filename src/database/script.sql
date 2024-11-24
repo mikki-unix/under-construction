@@ -7,7 +7,8 @@ create table usuario (
 idUsuario int primary key auto_increment,
 nome varchar(45) unique,
 email varchar(45) unique,
-senha varchar(25)
+senha varchar(25),
+imagem char(12)
 );
 
 create table quiz (
@@ -21,6 +22,14 @@ qtdAcertos int,
 dtPartida datetime default current_timestamp
 );
 -- fim tabelas
+
+-- inserções para testes
+insert into usuario value
+	(default, 'Mikki', 'mikki@email.com', 'Senha!1', '4fc16a4a.png');
+    
+insert into quiz(idQuiz, fkUsuario, qtdAcertos) value
+	(1, 1, 2);
+-- fim insercoes
 
 -- selects
 select * from usuario;
@@ -51,10 +60,3 @@ select
             group by fkUsuario
             order by pontuacao;
 -- fim selects
-
--- inserções para testes
-insert into usuario value
-	(default, 'Mikki', 'mikki@email.com', 'Senha!1');
-    
-insert into quiz(idQuiz, fkUsuario, qtdAcertos) value
-	(1, 1, 2);

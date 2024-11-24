@@ -1,2 +1,5 @@
 DOCUMENTOS_DE_APOIO
 node_modules
+
+public/assets/imgs/profile/*
+!public/assets/imgs/profile/padrao.png
