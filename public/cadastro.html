@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/styles/form.css">
   <title>cadastro</title>
   <script src="assets/js/cadastro.js"></script>
   <script src="assets/js/erroslogin.js"></script>
 </head>
-<body>
-  <main class="janela flex-column">
-    <h1 id="titulo-site">under construction</h1>
+<body class="viewport flex-center">
+  <main>
+    <header class="flex-space">
+      <h1 id="titulo-site">under construction</h1>
+      <h2>cadastro</h2>
+    </header>
     
-    <h2>cadastro</h2>
-    
-    <form class="flex-column">
-      <input type="file" id="input_imagem">
-      <input id="input_usuario" placeholder="usuario">
-      <input id="input_email" placeholder="usuario@email">
-      <input id="input_senha" placeholder="***">
-      <input id="input_confirmar_senha" placeholder="***">
-    </form>
-    
-    <div id="div_erro" style="display: none"></div>
-    
-    <button class="acao" onclick="cadastrarUsuario()">
-      cadastrar
-    </button>
-    <p>já tem conta? faça login</p>
+    <section class="flex-column">
+      <form class="flex-space">
+        <section class="flex-column">
+          <label id="label_exibicao" for="input_upload"></label>
+          <input type="file" id="input_upload" onchange="exibirImagem()">
+            <!--
+              `onchange` detecta quando é alterado o input, ou seja, quando recebe um arquivo.
+              é semelhante ao `onclick` num botão
+            -->
+        </section>
+        <section id="campos" class="flex-column">
+          <input id="input_usuario" placeholder="usuario">
+          <input id="input_email" placeholder="usuario@email">
+          <input id="input_senha" placeholder="***">
+          <input id="input_confirmar_senha" placeholder="***">
+        </section>
+      </form>
+      
+      <div id="div_erro" style="display: none"></div>
+      
+      <button class="acao" onclick="cadastrarUsuario()">
+        cadastrar
+      </button>
+      <p>já tem conta? faça login</p>
+    </section>
   </main>
 </body>
 </html>
