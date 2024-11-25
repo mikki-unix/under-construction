@@ -39,7 +39,7 @@ form #label_exibicao {
     width: 15rem;
 
     border-radius: 50%;
-    border: var(--borda-padrao);
+    outline: var(--borda-padrao);
     
     background-image: url('../icons/person.svg');
     background-size: cover;

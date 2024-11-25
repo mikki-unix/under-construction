@@ -4,6 +4,10 @@ function abrirFecharMenu(nomeMenu = '') {
     elemento.style.display = elemento.style.display == 'none' ? '' : 'none'
 }
 
+function recarregarPaginaAtual() {
+    window.location = window.location
+}
+
 function exibirMultiplosItensElementos(lista = [], idElemento = '') {
     for (
         var posicao = 0;

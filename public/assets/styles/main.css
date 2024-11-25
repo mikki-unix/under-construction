@@ -123,7 +123,6 @@ body {
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
 }
 
 .flex-space {
@@ -167,7 +166,8 @@ header #titulo-site {
 
 #div_usuario {
     width: fit-content;
-    gap: 1.5rem;
+    gap: 1rem;
+    cursor: pointer;
 }
 
 header #span_nome_usuario {
@@ -177,9 +177,10 @@ header #span_nome_usuario {
 
 header #div_foto_perfil {
     aspect-ratio: 1;
+    height: 5rem;
+    
     border-radius: 50%;
     outline: var(--borda-padrao);
-    width: 4.3rem;
 
     background-size: cover;
 }
@@ -247,4 +248,41 @@ form {
     width: 100%;
 
     font-size: 1.49rem;
+}
+
+#aside_menu_usuario {
+    width: 15rem;
+    gap: 1rem;
+} 
+
+#aside_menu_usuario button.opcao {
+    position: relative;
+    width: 85%;
+    padding: .5rem 0;
+    border-radius: .8rem;
+
+    font-size: 1.85rem;
+    font-weight: 500;
+}
+
+button.opcao > img {
+    position: absolute;
+    left: .5rem;
+}
+
+.opcao#painel {
+    background-color: var(--light-blue);
+}
+
+.opcao#quiz {
+    background-color: var(--light-pink);
+}
+
+.opcao#logout {
+    border: 0;
+    gap: .4rem;
+}
+
+.opcao#logout > img {
+    left: 2rem;
 }

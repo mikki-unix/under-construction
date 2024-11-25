@@ -29,6 +29,8 @@ function logarUsuario() {
                 sessionStorage.IMAGEM_USUARIO = json.imagem
             });
 
+            recarregarPaginaAtual()
+
         } else {
 
             console.log("Houve um erro ao tentar realizar o login!");

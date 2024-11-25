@@ -12,7 +12,7 @@ function validarSessao() {
     }
 }
 
-function limparSessao() {
+function deslogarUsuario() {
     sessionStorage.clear()
     window.location = 'index.html'
 }
