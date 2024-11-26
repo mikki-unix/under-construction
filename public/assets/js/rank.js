@@ -19,6 +19,6 @@ function exibirPlacar(dados) {
     const listaNomes = criarListaPorChave(dados, 'usuarie')
     const listaPontuacoes = criarListaPorChave(dados, 'pontuacao')
 
-    exibirMultiplosItensElementos(listaNomes, 'span_nome')
-    exibirMultiplosItensElementos(listaPontuacoes, 'span_pontuacao')
+    exibirPosicoesCoincidentes(listaNomes, 'span_nome')
+    exibirPosicoesCoincidentes(listaPontuacoes, 'span_pontuacao')
 }

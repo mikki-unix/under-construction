@@ -50,7 +50,7 @@ function obterPontuacaoUsuario(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
-function obterPontuacoesGerais() {
+function obterPlacar() {
     const instrucaoSql = `
         select
             nome as usuarie,
@@ -58,7 +58,7 @@ function obterPontuacoesGerais() {
                 from quiz
                 join usuario on idUsuario = fkUsuario
                     group by fkUsuario
-                    order by pontuacao;
+                    order by pontuacao desc;
     `
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -70,5 +70,5 @@ module.exports = {
     registrar,
     obterHistoricoUsuario,
     obterPontuacaoUsuario,
-    obterPontuacoesGerais
+    obterPlacar
 };

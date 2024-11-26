@@ -1,0 +1,63 @@
+@import url(main.css);
+
+:root {
+    --radius: 2rem;
+}
+
+main {
+    width: 100rem;
+    height: 60rem;
+
+    border-radius: var(--radius);
+
+    background-color: white;
+}
+
+section#dash {
+    box-sizing: border-box;
+
+    width: 72%;
+    height: 100%;
+
+    padding: 4rem;
+}
+
+section#kpis {
+    gap: 5rem;
+
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.kpi {
+    width: 15rem;
+    height: 7rem;
+
+    padding: 1rem;
+    border: var(--borda-padrao);
+    border-radius: 1rem;
+
+    background-color: var(--light-blue);
+}
+
+.kpi > p {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+section#grafico {
+    width: 90%;
+    height: 35rem;
+
+    padding: 2rem;
+}
+
+aside#menu {
+    box-sizing: border-box;
+
+    width: 28%;
+    height: 100%;
+    border-radius: 0 var(--radius) var(--radius) 0;
+
+    background-color: var(--light-pink);
+}

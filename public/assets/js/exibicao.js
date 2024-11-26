@@ -8,7 +8,7 @@ function recarregarPaginaAtual() {
     window.location = window.location
 }
 
-function exibirMultiplosItensElementos(lista = [], idElemento = '') {
+function exibirPosicoesCoincidentes(lista = [], idElemento = '') {
     for (
         var posicao = 0;
         posicao < lista.length;

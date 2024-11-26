@@ -16,7 +16,7 @@ router.get("/pontuacao/:idUsuario", function (req, res) {
 });
 
 router.get("/ranquear", function(req, res) {
-    quizController.obterPontuacoesGerais(req, res)
+    quizController.obterPlacar(req, res)
 });
 
 module.exports = router;

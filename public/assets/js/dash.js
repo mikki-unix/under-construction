@@ -5,7 +5,7 @@ function obterDados() {
         if (response.ok) {
             response.json().then(function (resposta) {
 
-                plotarGrafico(resposta);
+                plotarGraficoAcertos(resposta);
             });
         } else {
             console.error('Nenhum dado encontrado ou erro na API');
@@ -20,7 +20,7 @@ function obterDados() {
         if (response.ok) {
             response.json().then(function (resposta) {
 
-                gerarKpis(resposta);
+                exibirKpisUsuario(resposta);
             });
         } else {
             console.error('Nenhum dado encontrado ou erro na API');
@@ -32,25 +32,27 @@ function obterDados() {
 
 }
 
-// Função para plotar o gráfico de barra
-function plotarGrafico(dados) {
+function plotarGraficoAcertos(dados) {
 
     const qtdAcertos = [];
     const dias = [];
 
-    // Preenchendo os arrays com os dados
-    for (var i = 0; i < dados.length; i++) {
-        qtdAcertos.push(dados[i].qtdAcertos);
-
-        const diaHoraFormatados = formatarDataHora(dados[i].dtPartida)
-        dias.push(diaHoraFormatados);
+    if (dados != undefined) {
+        for (var i = 0; i < dados.length; i++) {
+            qtdAcertos.push(dados[i].qtdAcertos);
+    
+            const diaHoraFormatados = formatarDataHora(dados[i].dtPartida)
+            dias.push(diaHoraFormatados);
+        }
+    } else {
+        qtdAcertos.push(2, 4, 6, 7)
+        dias.push(1, 2, 3, 4)
     }
 
-    // Capturando o elemento canvas pelo id 
-    var ctx = document.getElementById('barra').getContext('2d');
-    // Criando o gráfico de barra usando o Chart.js
-    var myChart = new Chart(ctx, {
+    const elementoGrafico = document.getElementById('grafico_acertos').getContext('2d');    
+    new Chart(elementoGrafico, {
         type: 'bar',
+        
         data: {
             labels: dias,
             datasets: [{
@@ -65,30 +67,36 @@ function plotarGrafico(dados) {
                 borderWidth: 1
             }]
         },
+
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: false,
+                }
+            }
+        }
     });
 }
 
-function formatarDataHora(texto = '') {
+function formatarDataHora(textoData = '') {
     const camposData = ['', '', '', '', '']
 
     var posicaoCampo = 0
     for (
-        var letra = 0;
-        letra <= 15;
-        letra++
+        var caracter = 0;
+        caracter <= 15;
+        caracter++
     ) {
 
-        const atualSeparador = texto[letra] == '-' || texto[letra] == 'T' || texto[letra] == ':'
+        const atualSeparador = textoData[caracter] == '-' || textoData[caracter] == 'T' || textoData[caracter] == ':'
         if (atualSeparador) {
             posicaoCampo++
-            letra++
+            caracter++
         }
 
-        if (letra == 15) {
-            console.log('eita!')
-        }
-
-        camposData[posicaoCampo] += texto[letra]
+        camposData[posicaoCampo] += textoData[caracter]
     }
 
     const dia = camposData[2]
@@ -101,11 +109,11 @@ function formatarDataHora(texto = '') {
     return `${dia}/${mes}/${ano} ${hora}:${minutos}`
 }
 
-function gerarKpis(dados) {
+function exibirKpisUsuario(dados) {
     const realizados = dados[0].realizados
     const pontuacao = dados[0].pontuacao
     const perfeitos = dados[0].perfeitos
 
     const listaKpis = [realizados, pontuacao, perfeitos]
-    exibirMultiplosItensElementos(listaKpis, 'strong_kpi')
+    exibirPosicoesCoincidentes(listaKpis, 'strong_kpi')
 }

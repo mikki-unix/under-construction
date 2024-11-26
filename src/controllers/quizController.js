@@ -24,7 +24,6 @@ function registrar(req, res) {
         );
 
     setTimeout(function() {
-        // timeout para obter o valor de idQuiz
         quizModel.registrar(idQuiz, idUsuario, acertos)
             .then(
                 function (resultado) {
@@ -77,8 +76,8 @@ function obterPontuacaoUsuario(req, res) {
     });
 }
 
-function obterPontuacoesGerais(req, res){
-    quizModel.obterPontuacoesGerais().then(function (resultado) {
+function obterPlacar(req, res){
+    quizModel.obterPlacar().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -95,5 +94,5 @@ module.exports = {
     registrar,
     obterHistoricoUsuario,
     obterPontuacaoUsuario,
-    obterPontuacoesGerais
+    obterPlacar
 }

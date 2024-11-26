@@ -3,16 +3,15 @@ function exibirImagem() {
 
   const imagem = input_upload.files[0]
 
-  const leitor = new FileReader() // estabelece a conexão com a API nativa do JS
+  const leitor = new FileReader()
 
-  // "onload" é necessário para que a função abaixo só seja executada depois que o arquivo seja lido
-  leitor.onload = function (arquivo) { // "arquivo" é a imagem que será passada
-    const base64Arquivo = arquivo.target.result // como é uma File, ela tem propriedades específicas. o target.result é justamente uma URL base64
+  leitor.onload = function (arquivo) {
+    const base64Arquivo = arquivo.target.result
 
-    label_exibicao.style.backgroundImage = `url(${base64Arquivo})` // exibindo na label
+    label_exibicao.style.backgroundImage = `url(${base64Arquivo})`
   }
 
-  leitor.readAsDataURL(imagem) // chama a função
+  leitor.readAsDataURL(imagem)
 }
 
 function cadastrarUsuario() {
