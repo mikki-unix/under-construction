@@ -59,10 +59,10 @@ function plotarGraficoAcertos(dados) {
                 label: 'Acertos',
                 data: qtdAcertos,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
+                    '#fec6ec',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
+                    '#f779ce',
                 ],
                 borderWidth: 1
             }]
@@ -73,7 +73,9 @@ function plotarGraficoAcertos(dados) {
             maintainAspectRatio: false,
             scales: {
                 y: {
-                    beginAtZero: false,
+                    ticks: {
+                        stepSize: 1
+                    }
                 }
             }
         }

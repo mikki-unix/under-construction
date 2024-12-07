@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/painel.css">
+    <title>painel</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/dash.js"></script>
+    <script src="assets/js/exibicao.js"></script>
+    <script src="assets/js/sessao.js"></script>
+</head>
+<body class="viewport flex-column flex-space" onload="plotarGraficoAcertos()">
+    <header id="main" class="flex-space">
+        <nav class="flex-center">
+            <a href="index.html">início</a>
+            <a href="quiz.html">quiz</a>
+            <a href="placar.html">placar</a>
+        </nav>
+
+        <h1 id="titulo-site">
+            <a href="index.html">under construction</a>
+        </h1>
+
+        <section id="section_sessao" class="flex-end">
+            <button id="cadastro" class="acao" onclick="window.location = 'cadastro.html'">
+                cadastro
+            </button>
+            <button id="login" class="acao" onclick="abrirFecharMenu('login')">
+                login
+            </button>
+        </section>
+
+        <section id="section_usuarie" class="flex-end" style="display: none;" onclick="abrirFecharMenu('usuario')">
+            <span id="span_nome_usuarie">usuárie</span>
+            <div id="div_foto_perfil"></div>
+        </section>
+    </header>
+
+    <main class="flex-column flex-space">
+        <section id="kpis" class="flex-space">
+            <div class="kpi flex-center">
+                <p>Quizzes realizados</p>
+                <strong id="strong_kpi0">0</strong>
+            </div>
+
+            <div id="pontuacao" class="kpi flex-center">
+                <p>Pontuação acumulada</p>
+                <strong id="strong_kpi1">0</strong>
+            </div>
+
+            <div class="kpi flex-center">
+                <p>Quizzes perfeitos</p>
+                <strong id="strong_kpi2">0</strong>
+            </div>
+        </section>
+
+        <section id="grafico" class="flex-center">
+            <canvas id="grafico_acertos"></canvas>
+        </section>
+    </main>
+</body>
+</html>

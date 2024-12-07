@@ -11,25 +11,33 @@
     <script src="assets/js/exibicao.js"></script>
 </head>
 <body onload="validarSessao()">
-    <header class="flex-space">
-        <h1 id="titulo-site">under construction</h1>
+    <header id="main" class="flex-space">
+        <nav class="flex-center">
+            <a href="index.html">início</a>
+            <a href="quiz.html">quiz</a>
+            <a href="placar.html">placar</a>
+        </nav>
 
-        <div id="div_sessao" class="flex-end">
+        <h1 id="titulo-site">
+            <a href="index.html">under construction</a>
+        </h1>
+
+        <section id="section_sessao" class="flex-end">
             <button id="cadastro" class="acao" onclick="window.location = 'cadastro.html'">
                 cadastro
             </button>
-            <button id="login" class="acao login" onclick="abrirFecharMenu('login')">
+            <button id="login" class="acao" onclick="abrirFecharMenu('login')">
                 login
             </button>
-        </div>
+        </section>
 
-        <div id="div_usuario" class="flex-end" style="display: none;" onclick="abrirFecharMenu('usuario')">
-            <span id="span_nome_usuario">usuário</span>
+        <section id="section_usuarie" class="flex-end" style="display: none;" onclick="abrirFecharMenu('usuario')">
+            <span id="span_nome_usuarie">usuárie</span>
             <div id="div_foto_perfil"></div>
-        </div>
+        </section>
     </header>
 
-    <aside id="aside_menu_login" class="menu flex-column" style="display: none;">
+    <aside id="aside_menu_login" class="menu-flutuante flex-column" style="display: none;">
         <form class="flex-column">
             <span class="campo flex-space">
                 <img src="assets/icons/badge.svg">
@@ -48,16 +56,16 @@
         </button>
     </aside>
 
-    <aside id="aside_menu_usuario" class="menu flex-column" style="display: none;">
-        <button id="painel" class="opcao flex-center" onclick="window.location = 'painel/'">
+    <aside id="aside_menu_usuario" class="menu-flutuante flex-column" style="display: none;">
+        <button id="painel" class="opcao" onclick="window.location = 'painel/'">
             <img src="assets/icons/dashboard.svg">
             <span>painel</span>
         </button>
-        <button id="quiz" class="opcao flex-center" onclick="window.location = 'quiz.html'">
+        <button id="quiz" class="opcao" onclick="window.location = 'quiz.html'">
             <img src="assets/icons/quiz.svg">
             <span>quiz</span>
         </button>    
-        <button id="logout" class="opcao flex-center" onclick="deslogarUsuario()">
+        <button id="logout" class="opcao" onclick="deslogarUsuario()">
             <img src="assets/icons/logout.svg">
             <span>sair</span>
         </button>   

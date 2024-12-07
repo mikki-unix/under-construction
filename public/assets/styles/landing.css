@@ -1,4 +1,5 @@
 @import url(main.css);
+@import url(header.css);
 
 main {
     padding-top: 10rem;

@@ -14,8 +14,13 @@ main {
 }
 
 main header {
-    position: unset;
-    border-radius: var(--radius) var(--radius) 0 0;
+    box-sizing: border-box;
+    padding: 1.5rem;
+
+    border-radius: var(--radius) var(--radius ) 0 0;
+    border-bottom: var(--borda-padrao);
+
+    background-color: var(--light-pink);
 }
 
 main header #titulo-site {
@@ -43,6 +48,7 @@ form #label_exibicao {
     
     background-image: url('../icons/person.svg');
     background-size: cover;
+    cursor: pointer;
 }
 
 input[type="file"] {
@@ -64,6 +70,12 @@ form section#campos {
 
 main button {
     margin-top: 2.5rem;
+
+    padding: .6rem;
+    border-radius: 1.5rem;
+
+    font-size: 1.5rem;
+    background-color: var(--light-blue);
 }
 
 main p {
