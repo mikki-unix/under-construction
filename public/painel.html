@@ -10,7 +10,7 @@
     <script src="assets/js/exibicao.js"></script>
     <script src="assets/js/sessao.js"></script>
 </head>
-<body class="viewport flex-column flex-space" onload="plotarGraficoAcertos()">
+<body class="viewport flex-column" onload="plotarGraficoAcertos()">
     <header id="main" class="flex-space">
         <nav class="flex-center">
             <a href="index.html">início</a>
@@ -31,11 +31,42 @@
             </button>
         </section>
 
-        <section id="section_usuarie" class="flex-end" style="display: none;" onclick="abrirFecharMenu('usuario')">
+        <section id="section_usuarie" class="flex-end" style="display: none;" onclick="abrirFecharMenu('usuarie')">
             <span id="span_nome_usuarie">usuárie</span>
             <div id="div_foto_perfil"></div>
         </section>
     </header>
+
+    <aside id="aside_menu_login" class="menu-flutuante flex-column" style="display: none;">
+        <form class="flex-column">
+            <span class="campo flex-space">
+                <img src="assets/icons/badge.svg">
+                <input id="input_usuario" placeholder="usuarie">
+            </span>
+            <span class="campo flex-space">
+                <img src="assets/icons/password.svg">
+                <input id="input_senha" type="password" placeholder="••••••">
+            </span>
+        </form>
+        
+        <span id="span_erro" style="display: none;">deu xabu</span>
+
+        <button class="acao login" onclick="logarUsuario()">
+            logar
+        </button>
+    </aside>
+
+    <aside id="aside_menu_usuarie" class="menu-flutuante flex-column" style="display: none;">
+        <button id="painel" class="opcao" onclick="window.location = 'painel/'">
+            <img src="assets/icons/dashboard.svg">
+            <span>painel</span>
+        </button>
+        </button>    
+        <button id="logout" class="opcao" onclick="deslogarUsuario()">
+            <img src="assets/icons/logout.svg">
+            <span>sair</span>
+        </button>   
+    </aside>
 
     <main class="flex-column flex-space">
         <section id="kpis" class="flex-space">

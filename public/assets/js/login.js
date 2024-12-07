@@ -24,9 +24,9 @@ function logarUsuario() {
             resposta.json().then(json => {
                 console.log(json); ''
                 console.log(JSON.stringify(json));
-                sessionStorage.ID_USUARIO = json.id;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.IMAGEM_USUARIO = json.imagem
+                sessionStorage.ID_USUARIE = json.id;
+                sessionStorage.NOME_USUARIE = json.nome;
+                sessionStorage.IMAGEM_USUARIE = json.imagem
             });
 
             recarregarPaginaAtual()

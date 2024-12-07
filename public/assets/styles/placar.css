@@ -1,0 +1,67 @@
+@import url(painel.css);
+
+:root {
+    --radius0: 1.5rem;
+    --radius1: .3rem;
+}
+
+main {
+    width: 65rem;
+    height: 40rem;
+    position: relative;
+}
+
+section.flex-center {
+    height: 27rem;
+    gap: 8rem;
+    flex-wrap: nowrap;
+}
+
+section > div {
+    font-size: 1.75rem;
+}
+
+div#top0 {
+    align-self: flex-start;
+}
+
+div.perfil {
+    width: 14rem;
+    aspect-ratio: 1;
+
+    margin-bottom: .8rem;
+    outline: var(--borda-padrao);
+    border-radius: 50%;
+
+    background-size: cover;
+    background-image: url('../icons/person.svg');
+}
+
+span.nome {
+    font-size: 2rem;
+    font-weight: 450;
+}
+
+.podio {
+    position: absolute;
+    bottom: 0;
+
+    width: 13rem;
+
+    padding-top: 11rem;
+    padding-bottom: .5rem;
+
+    border: var(--borda-padrao);
+    border-color: var(--dark-pink);
+    border-radius: var(--radius0) var(--radius0) var(--radius1) var(--radius1);
+
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 450;
+
+    background-color: var(--light-pink);
+}
+
+.podio#top0 {
+    padding-top: 15rem;
+}

@@ -31,7 +31,7 @@
             </button>
         </section>
 
-        <section id="section_usuarie" class="flex-end" style="display: none;" onclick="abrirFecharMenu('usuario')">
+        <section id="section_usuarie" class="flex-end" style="display: none;" onclick="abrirFecharMenu('usuarie')">
             <span id="span_nome_usuarie">usuárie</span>
             <div id="div_foto_perfil"></div>
         </section>
@@ -56,14 +56,11 @@
         </button>
     </aside>
 
-    <aside id="aside_menu_usuario" class="menu-flutuante flex-column" style="display: none;">
+    <aside id="aside_menu_usuarie" class="menu-flutuante flex-column" style="display: none;">
         <button id="painel" class="opcao" onclick="window.location = 'painel/'">
             <img src="assets/icons/dashboard.svg">
             <span>painel</span>
         </button>
-        <button id="quiz" class="opcao" onclick="window.location = 'quiz.html'">
-            <img src="assets/icons/quiz.svg">
-            <span>quiz</span>
         </button>    
         <button id="logout" class="opcao" onclick="deslogarUsuario()">
             <img src="assets/icons/logout.svg">
