@@ -16,7 +16,7 @@ function exibirImagem() {
 
 function cadastrarUsuario() {
   const imagem = input_perfil.files[0]
-  const usuario = input_usuario.value;
+  const usuario = input_usuarie.value;
   const email = input_email.value;
   const senha = input_senha.value;
   const confirmarSenha = input_confirmar_senha.value;
