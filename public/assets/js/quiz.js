@@ -1,18 +1,61 @@
 const perguntas = [
     {
-        enunciado: 'Quem foi gege..?',
-        alternativas: ['não sei', 'profissional', 'alguém']
+        enunciado: 'Quem introduziu o termo gênero?',
+        alternativas: ['John Money', 'Robert Stoller', 'Simone de Beauvoir']
     },
+
     {
-        enunciado: 'Quem foi Gigi?',
-        alternativas: ['professora', 'profissional', 'aluna']
+        enunciado: 'Quem fez a primeira distinção entre o social e o biológico?',
+        alternativas: ['Simone de Beauvoir', 'John Money', 'Robert Stoller']
+    },
+
+    {
+        enunciado: 'O que melhor define gênero?',
+        alternativas: ['papel social', 'biologia', 'atração']
+    },
+
+    {
+        enunciado: 'O que melhor define uma identidade de gênero?',
+        alternativas: ['sentimento interno de gênero', 'expectativa alheia', 'atribuição ao nascer']
+    },
+
+    {
+        enunciado: 'Qual característica melhor descreve o gênero na teoria do espectro?',
+        alternativas: ['bimodal', 'binário', 'unitário']
+    },
+
+    {
+        enunciado: 'O gênero pode ser considerado...',
+        alternativas: ['mutável e ilimitado', 'fixo e binário', 'atribuição alheia']
+    },
+
+    {
+        enunciado: 'Qual a relação do gênero de uma pessoa transgênero?',
+        alternativas: ['difere do designado', 'igual ao atribuído', 'igual ao sexo']
+    },
+
+    {
+        enunciado: 'Como é o processo de transição de gênero?',
+        alternativas: ['pode diferir por pessoa', 'padrão fixo', 'cirúrgico']
+    },
+
+    {
+        enunciado: `Termo que define "desconforto pela incongruência entre a identidade de gênero e o gênero designado a pessoa"`,
+        alternativas: ['disforia de gênero', 'euforia de gênero', 'transgeneridade']
+    },
+
+    {
+        enunciado: 'O que é euforia de gênero?',
+        alternativas: ['conforto com a identidade de gênero', 'desconforto com o corpo', 'desconforto com o gênero']
     }
 ]
 
 var qtdAcertos = 0;
+var qtdQuestoes = 0
 
 function comecarQuiz() {
     qtdAcertos = 0
+    qtdQuestoes = 0
 
     article_instrucoes.style.display == '' ? article_instrucoes.style.display = 'none' : article_relatorio.style.display = 'none'
 
@@ -33,52 +76,55 @@ function criarCheckListPerguntas() {
     }
 }
 
-var qtdQuestoes = 0
 function sortearPergunta() {
     if (checkListPerguntas.length == 0) {
         return terminarQuiz()
     }
 
-    const posicaoPergunta = parseInt(Math.random() * checkListPerguntas.length)
+    const posicaoAleatoriaChecklist = parseInt(Math.random() * checkListPerguntas.length)
+    const numeroPergunta = [checkListPerguntas[posicaoAleatoriaChecklist]]
 
-    const enunciadoPergunta = perguntas[checkListPerguntas[posicaoPergunta]].enunciado
+    checkListPerguntas.splice(posicaoAleatoriaChecklist, 1)
 
-    checkListPerguntas.splice(posicaoPergunta, 1)
-
+    const enunciadoPergunta = perguntas[numeroPergunta].enunciado    
     span_enunciado.innerText = enunciadoPergunta
-
+    
     qtdQuestoes++
     strong_numero_pergunta.innerText = qtdQuestoes + '.'
-
-    sortearAlternativas(posicaoPergunta)
+    
+    sortearAlternativas(numeroPergunta)
 }
 
-function sortearAlternativas(posicaoPergunta) {
-    const checkListSpan = [0, 1, 2]
-    const checklistTextoAlternativa = [0, 1, 2]
+function sortearAlternativas(numeroPergunta) {
+    const checklistSpan = [0, 1, 2]
+    const checklistAlternativas = [0, 1, 2]
 
     for (
         var numeroAlternativa = 0;
         numeroAlternativa <= 2;
         numeroAlternativa++
     ) {
-        const numeroAleatorioSpan = parseInt(Math.random() * checkListSpan.length)
+        const numeroAleatorioSpan = parseInt(Math.random() * checklistSpan.length)
+        const numeroSpan = checklistSpan[numeroAleatorioSpan]
 
-        const spanSelecionado = document.getElementById(`span_texto_alternativa${checkListSpan[numeroAleatorioSpan]}`)
-        const btnSelecionado = document.getElementById(`btn_alternativa${checkListSpan[numeroAleatorioSpan]}`)
+        checklistSpan.splice(numeroAleatorioSpan, 1)
 
-        checkListSpan.splice(numeroAleatorioSpan, 1)
+        const spanSelecionado = document.getElementById(`span_texto_alternativa${numeroSpan}`)
+        const btnSelecionado = document.getElementById(`btn_alternativa${numeroSpan}`)
 
-        const numeroAleatorioTexto = parseInt(Math.random() * checklistTextoAlternativa.length)
-        spanSelecionado.innerText = perguntas[posicaoPergunta].alternativas[checklistTextoAlternativa[numeroAleatorioTexto]]
+        const numeroAleatorioAlternativa = parseInt(Math.random() * checklistAlternativas.length)
+        const numeroAlternativa = checklistAlternativas[numeroAleatorioAlternativa]
 
-        if (checklistTextoAlternativa[numeroAleatorioTexto] == 0) {
+        checklistAlternativas.splice(numeroAleatorioAlternativa, 1)
+
+        const textoAlternativa = perguntas[numeroPergunta].alternativas[numeroAlternativa]
+        spanSelecionado.innerText = textoAlternativa
+
+        if (numeroAlternativa == 0) {
             btnSelecionado.setAttribute('name', 'correta')
         } else {
             btnSelecionado.setAttribute('name', 'incorreta')
         }
-
-        checklistTextoAlternativa.splice(numeroAleatorioTexto, 1)
     }
 }
 

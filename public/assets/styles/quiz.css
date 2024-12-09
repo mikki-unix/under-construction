@@ -1,4 +1,5 @@
-@import url('main.css');
+@import url(main.css);
+@import url(header.css);
 
 .janela {
     width: 40rem;
