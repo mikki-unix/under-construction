@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/landing.css">
     <title>underconstruction</title>
-    <script src="assets/js/sessao.js"></script>
     <script src="assets/js/erroslogin.js"></script>
     <script src="assets/js/login.js"></script>
     <script src="assets/js/exibicao.js"></script>
 </head>
-<body class="viewport" onload="validarSessao()">
+<body class="viewport">
     <header id="main" class="flex-space">
         <nav class="flex-center">
             <a href="index.html">início</a>
@@ -41,7 +40,7 @@
         <form class="flex-column">
             <span class="campo flex-space">
                 <img src="assets/icons/badge.svg">
-                <input id="input_usuario" placeholder="usuarie">
+                <input id="input_usuarie" placeholder="usuarie">
             </span>
             <span class="campo flex-space">
                 <img src="assets/icons/password.svg">
@@ -51,18 +50,18 @@
         
         <span id="span_erro" style="display: none;">deu xabu</span>
 
-        <button class="acao login" onclick="logarUsuario()">
+        <button class="acao login" onclick="logar()">
             logar
         </button>
     </aside>
 
     <aside id="aside_menu_usuarie" class="menu-flutuante flex-column" style="display: none;">
-        <button id="painel" class="opcao" onclick="window.location = 'painel/'">
+        <button id="painel" class="opcao" onclick="window.location = 'painel.html'">
             <img src="assets/icons/dashboard.svg">
             <span>painel</span>
         </button>
         </button>    
-        <button id="logout" class="opcao" onclick="deslogarUsuario()">
+        <button id="logout" class="opcao" onclick="deslogar()">
             <img src="assets/icons/logout.svg">
             <span>sair</span>
         </button>   
@@ -84,4 +83,5 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M479.8-340q66.2 0 113.2-46.8t47-113q0-66.2-46.8-113.2t-113-47Q414-660 367-613.2t-47 113q0 66.2 46.8 113.2t113 47ZM450-120h-50q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h50v-101q-82.33-14.1-136.17-75.55Q260-418 260-500q0-36 11-70.11T304-633l-42-42-35 35q-9 9-21 9t-21-9q-9-9-9-21.1 0-12.1 9-20.9l35-35-100-100v87q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63Q60-717.25 60-730v-160q0-12.75 8.63-21.38Q77.25-920 90-920h160q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5h-87l100 100 35-35q9-9 21.1-9 12.1 0 20.9 9 9 9 9 21.1 0 12.1-9 20.9l-35 35 43 43q29-22 62.5-33.5T480-720q36 0 70 11t63 33l184-184h-87q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h160q12.75 0 21.38 8.62Q900-902.75 900-890v160q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-87L656-633q22 29 33 62.77 11 33.78 11 70.23 0 82-53.83 143.45Q592.33-295.1 510-281v101h50q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5h-50v50q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63Q450-57.25 450-70v-50Z"/></svg>
     </main>
 </body>
+<script src="assets/js/sessao.js"></script>
 </html>

@@ -3,60 +3,58 @@ use underconstruction;
 --
 
 -- criando tabelas
-create table usuario (
-idUsuario int primary key auto_increment,
+create table usuarie (
+idUsuarie int primary key auto_increment,
 nome varchar(45) unique,
 email varchar(45) unique,
-senha varchar(25),
+senha varchar(255),
 imagem char(12)
 );
 
 create table quiz (
 idQuiz int,
-fkUsuario int,
-	constraint fkQuizUsuario
-		foreign key (fkUsuario) references usuario(idUsuario),
+fkUsuarie int,
+	constraint fkQuizUsuarie
+		foreign key (fkUsuarie) references usuarie(idUsuarie),
 	constraint pkComposta
-		primary key (idQuiz, fkUsuario),
+		primary key (idQuiz, fkUsuarie),
 qtdAcertos int,
 dtPartida datetime default current_timestamp
 );
 -- fim tabelas
 
--- inserções para testes
-insert into usuario value
-	(default, 'Mikki', 'mikki@email.com', 'Senha!1', '4fc16a4a.png');
+-- inserções padroes
+insert into usuarie values
+	(default, 'Mikki', 'mikki@email.com', MD5('Senha!1'), '4fc16a4a.png'),
+    (default, 'Maya', 'maya@email.com', MD5('Uwu123!'), '7b1fe352.png');
     
-insert into quiz(idQuiz, fkUsuario, qtdAcertos) value
-	(1, 1, 2);
+insert into quiz(idQuiz, fkUsuarie, qtdAcertos) values
+	(1, 1, 10),
+    (1, 2, 8);
 -- fim insercoes
 
 -- selects
-select * from usuario;
-select * from quiz;
-
 select 
 	idQuiz,
 	qtdAcertos,
     dtPartida
 		from quiz
-		join usuario on idUsuario = fkUsuario
-			where fkUsuario = 1;
+		join usuarie on idUsuarie = fkUsuarie
+			where fkUsuarie = 1;
             
 select
 	count(idQuiz) as realizados,
 	sum(qtdAcertos) as pontuacao,
     count(qtdAcertos = 10) as perfeitos
 		from quiz
-        join usuario on idUsuario = fkUsuario
-			where fkUsuario = 1
-            group by fkUsuario;
+        join usuarie on idUsuarie = fkUsuarie
+			where fkUsuarie = 1;
             
 select
 	nome as usuarie,
 	sum(qtdAcertos) as pontuacao
 		from quiz
-        join usuario on idUsuario = fkUsuario
-            group by fkUsuario
+        join usuarie on idUsuarie = fkUsuarie
+            group by fkUsuarie
             order by pontuacao;
 -- fim selects

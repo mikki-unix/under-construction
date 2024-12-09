@@ -1,6 +1,8 @@
+obterDados()
+
 function obterDados() {
 
-    fetch(`/quiz/historico/${sessionStorage.ID_USUARIO}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/quiz/historico/${sessionStorage.ID_USUARIE}`, { cache: 'no-store' }).then(function (response) {
 
         if (response.ok) {
             response.json().then(function (resposta) {
@@ -15,12 +17,12 @@ function obterDados() {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
     });
 
-    fetch(`/quiz/pontuacao/${sessionStorage.ID_USUARIO}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/quiz/pontuacao/${sessionStorage.ID_USUARIE}`, { cache: 'no-store' }).then(function (response) {
 
         if (response.ok) {
             response.json().then(function (resposta) {
 
-                exibirKpisUsuario(resposta);
+                exibirKpisUsuarie(resposta);
             });
         } else {
             console.error('Nenhum dado encontrado ou erro na API');
@@ -111,7 +113,7 @@ function formatarDataHora(textoData = '') {
     return `${dia}/${mes}/${ano} ${hora}:${minutos}`
 }
 
-function exibirKpisUsuario(dados) {
+function exibirKpisUsuarie(dados) {
     const realizados = dados[0].realizados
     const pontuacao = dados[0].pontuacao
     const perfeitos = dados[0].perfeitos

@@ -171,8 +171,8 @@ function registrar() {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            idServer: sessionStorage.ID_USUARIO,
-            acertosServer: qtdAcertos
+            idUsuarie: sessionStorage.ID_USUARIE,
+            acertos: qtdAcertos
         }),
     })
         .then(function (resposta) {

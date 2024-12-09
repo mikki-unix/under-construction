@@ -1,3 +1,5 @@
+obterPlacar()
+
 function obterPlacar() {
     fetch('/quiz/ranquear', { cache: 'no-store' }).then(function (response) {
 
@@ -18,7 +20,9 @@ function obterPlacar() {
 function exibirPlacar(dados) {
     const listaNomes = criarListaPorChave(dados, 'usuarie')
     const listaPontuacoes = criarListaPorChave(dados, 'pontuacao')
+    const listaImagnes = criarListaPorChave(dados, 'imagem')
 
     exibirPosicoesCoincidentes(listaNomes, 'span_nome')
     exibirPosicoesCoincidentes(listaPontuacoes, 'span_pontuacao')
+    exibirPosicoesCoincidentes(listaImagnes, 'div_perfil', 'perfil')
 }

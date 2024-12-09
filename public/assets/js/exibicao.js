@@ -8,16 +8,20 @@ function recarregarPaginaAtual() {
     window.location = window.location
 }
 
-function exibirPosicoesCoincidentes(lista = [], idElemento = '') {
+function exibirPosicoesCoincidentes(lista = [], idElemento = '', operacao = '') {
     for (
         var posicao = 0;
         posicao < lista.length;
         posicao++
     ) {
-        const conteudoPosicao = lista[posicao]
+        const conteudoLista = lista[posicao]
         const elemento = document.getElementById(`${idElemento}${posicao}`)
 
-        elemento.innerText = conteudoPosicao
+        if (operacao == 'perfil') {
+            elemento.style.backgroundImage = `url(assets/imgs/profile/${conteudoLista})`
+        } else {
+            elemento.innerText = conteudoLista
+        }
     }
 }
 

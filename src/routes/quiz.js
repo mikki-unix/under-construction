@@ -7,12 +7,12 @@ router.post("/registrar", function (req, res) {
     quizController.registrar(req, res)
 });
 
-router.get("/historico/:idUsuario", function (req, res) {
-    quizController.obterHistoricoUsuario(req, res)
+router.get("/historico/:idUsuarie", function (req, res) {
+    quizController.obterHistoricoUsuarie(req, res)
 });
 
-router.get("/pontuacao/:idUsuario", function (req, res) {
-    quizController.obterPontuacaoUsuario(req, res)
+router.get("/pontuacao/:idUsuarie", function (req, res) {
+    quizController.obterPontuacaoUsuarie(req, res)
 });
 
 router.get("/ranquear", function(req, res) {

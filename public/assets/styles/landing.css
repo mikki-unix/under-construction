@@ -9,6 +9,10 @@ header {
     z-index: 1;
 }
 
+.menu-flutuante {
+    z-index: 1;
+}
+
 main {
     box-sizing: border-box;
     width: 100%;

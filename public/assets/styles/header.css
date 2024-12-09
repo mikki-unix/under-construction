@@ -37,9 +37,10 @@ header #titulo-site {
     cursor: pointer;
 }
 
-#span_nome_usuario {
+#span_nome_usuarie {
     font-size: 2.2rem;
     font-weight: 450;
+    text-align: right;
 }
 
 header #div_foto_perfil {
@@ -97,12 +98,12 @@ button#login {
     font-size: 1.5rem;
 }
 
-#aside_menu_usuario {
+#aside_menu_usuarie {
     width: 15rem;
     gap: 1rem;
 } 
 
-#aside_menu_usuario button.opcao {
+#aside_menu_usuarie button.opcao {
     position: relative;
     width: 85%;
     padding: .5rem 0;

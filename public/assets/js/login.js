@@ -1,21 +1,21 @@
-function logarUsuario() {
-    const usuario = input_usuario.value;
+function logar() {
+    const usuarie = input_usuarie.value;
     const senha = input_senha.value;
 
     const elemento = document.getElementById('span_erro')
 
-    if (algumErro([usuario, senha], elemento, 'login')) {
+    if (algumErro([usuarie, senha], elemento, 'login')) {
         return
     }
 
-    fetch("/usuarios/autenticar", {
+    fetch("/usuarie/autenticar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            usuarioServer: usuario,
-            senhaServer: senha
+            usuarie: usuarie,
+            senha: senha
         })
     }).then(function (resposta) {
         if (resposta.ok) {

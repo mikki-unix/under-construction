@@ -1,49 +1,48 @@
 const database = require("../database/config")
 
-function contarRealizados(idUsuario) {
+function contarRealizados(idUsuarie) {
     const instrucaoSql = `
         SELECT count(idQuiz) as qtdRealizados 
             FROM quiz 
-            WHERE fkUsuario = ${idUsuario};
+            WHERE fkUsuarie = ${idUsuarie};
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function registrar(idQuiz, idUsuario, acertos) {
+function registrar(idQuiz, idUsuarie, acertos) {
     const instrucaoSql = `
-        INSERT INTO quiz VALUE 
-            (${idQuiz}, ${idUsuario}, ${acertos});
+        INSERT INTO quiz (idQuiz, fkUsuarie, qtdAcertos) VALUE 
+            (${idQuiz}, ${idUsuarie}, ${acertos});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function obterHistoricoUsuario(idUsuario) {
+function obterHistoricoUsuarie(idUsuario) {
     const instrucaoSql = `
         select 
         idQuiz,
         qtdAcertos,
         dtPartida
             from quiz
-            join usuario on idUsuario = fkUsuario
-                where fkUsuario = ${idUsuario};
+            join usuarie on idUsuarie = fkUsuarie
+                where fkUsuarie = ${idUsuario};
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function obterPontuacaoUsuario(idUsuario) {
+function obterPontuacaoUsuarie(idUsuarie) {
     const instrucaoSql = `
         select
         count(idQuiz) as realizados,
             sum(qtdAcertos) as pontuacao,
-            count(qtdAcertos = 10) as perfeitos
+            count(case when qtdAcertos = 10 then 1 end) as perfeitos
                 from quiz
-                join usuario on idUsuario = fkUsuario
-                    where fkUsuario = 1
-                    group by fkUsuario;
+                join usuarie on idUsuarie = fkUsuarie
+                    where fkUsuarie = ${idUsuarie};
     `
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -54,10 +53,11 @@ function obterPlacar() {
     const instrucaoSql = `
         select
             nome as usuarie,
-            sum(qtdAcertos) as pontuacao
+            sum(qtdAcertos) as pontuacao,
+            imagem
                 from quiz
-                join usuario on idUsuario = fkUsuario
-                    group by fkUsuario
+                join usuarie on idUsuarie = fkUsuarie
+                    group by fkUsuarie
                     order by pontuacao desc;
     `
 
@@ -68,7 +68,7 @@ function obterPlacar() {
 module.exports = {
     contarRealizados,
     registrar,
-    obterHistoricoUsuario,
-    obterPontuacaoUsuario,
+    obterHistoricoUsuarie,
+    obterPontuacaoUsuarie,
     obterPlacar
 };

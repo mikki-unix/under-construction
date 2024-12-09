@@ -1,10 +1,12 @@
+validarSessao()
+
 function validarSessao() {
-    if(sessionStorage.NOME_USUARIO != undefined) {
+    if(sessionStorage.NOME_USUARIE) {
         section_sessao.style.display = 'none'
 
-        span_nome_usuarie.innerText = sessionStorage.NOME_USUARIO
+        span_nome_usuarie.innerText = sessionStorage.NOME_USUARIE
 
-        const imagemUsuario = sessionStorage.IMAGEM_USUARIO
+        const imagemUsuario = sessionStorage.IMAGEM_USUARIE
         const caminhoImagem = `url(assets/imgs/profile/${imagemUsuario})` 
 
         div_foto_perfil.style.backgroundImage = caminhoImagem
@@ -13,7 +15,7 @@ function validarSessao() {
     }
 }
 
-function deslogarUsuario() {
+function deslogar() {
     sessionStorage.clear()
     window.location = 'index.html'
 }

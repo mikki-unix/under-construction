@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>placar</title>
     <link rel="stylesheet" href="assets/styles/placar.css">
-    <script src="assets/js/rank.js"></script>
     <script src="assets/js/exibicao.js"></script>
     <script src="assets/js/login.js"></script>
 </head>
-<body class="viewport flex-column" onload="obterPlacar()">
+<body class="viewport flex-column">
     <header id="main" class="flex-space">
         <nav class="flex-center">
             <a href="index.html">início</a>
@@ -56,7 +55,7 @@
     </aside>
 
     <aside id="aside_menu_usuarie" class="menu-flutuante flex-column" style="display: none;">
-        <button id="painel" class="opcao" onclick="window.location = 'painel/'">
+        <button id="painel" class="opcao" onclick="window.location = 'painel.html'">
             <img src="assets/icons/dashboard.svg">
             <span>painel</span>
         </button>
@@ -70,26 +69,28 @@
     <main class="flex-center">
         <section class="flex-center">
             <div class="flex-column">
-                <div class="perfil"></div>
+                <div id="div_perfil1" class="perfil"></div>
                 <span id="span_nome1" class="nome">usuarie</span>
-                <span id="span_pontuacao1">10 pontos</span>
+                <span><span id="span_pontuacao1">10</span> pontos</span>
                 <div class="podio">2º lugar</div>
             </div>
 
             <div class="flex-column" id="top0">
-                <div class="perfil"></div>
+                <div id="div_perfil0" class="perfil"></div>
                 <span id="span_nome0" class="nome">usuarie</span>
-                <span id="span_pontuacao0">20 pontos</span>
+                <span><span id="span_pontuacao0">20</span> pontos</span>
                 <div id="top0" class="podio">1º lugar</div>
             </div>
 
             <div class="flex-column">
-                <div class="perfil"></div>
+                <div id="div_perfil2" class="perfil"></div>
                 <span id="span_nome2" class="nome">usuarie</span>
-                <span id="span_pontuacao2">8 pontos</span>
+                <span><span id="span_pontuacao2">8</span> pontos</span>
                 <div class="podio">3º lugar</div>
             </div>
         </section>
     </main>
 </body>
+<script src="assets/js/sessao.js"></script>
+<script src="assets/js/rank.js"></script>
 </html>
